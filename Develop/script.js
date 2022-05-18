@@ -1,5 +1,5 @@
    //ask user to input 1,2 or 3, to decide on the cases used in the password  
-  var getCase = function() {
+  var criteriaCase = function() {
     var getCase = window.prompt(" Would you like your password to contain UPPERCASE characters, LOWERCASE characters or BOTH? Please enter 1 for UPPERCASE, 2 for LOWERCASE, or 3 for BOTH.");
     // convert answer from prompt to an actual number
     getCase = parseInt(getCase);
@@ -15,7 +15,28 @@
         console.log("both cases");
         return("both cases")
       default:
-        getCase();
+        window.alert("Please select a valid response.")
+        criteriaCase();
+    }
+   }
+
+   var criteriaCharacterType = function() {
+     var getCharacterType = window.prompt("Would you like your password to contain NUMBERS, SPECIAL CHARACTERS or BOTH? Please enter 1 for NUMBERS, 2 for SPECIAL CHARACTERS, or 3 for BOTH.");
+     // convert answer from prompt to an actual number
+     getCharacterType = parseInt(getCharacterType);
+     switch (getCharacterType) {
+      case 1:
+        console.log("numbers");
+        return("numbers");
+      case 2:
+        console.log("special characters");
+        return("special characters");
+      case 3:
+        console.log("both types");
+        return("both types")
+      default:
+        window.alert("Please select a valid response.")
+        criteriaCharacterType();
     }
    }
   
@@ -25,11 +46,13 @@ var generatePassword = function() {
      var getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
        if (getLength >= 8 && getLength <= 128) {
          console.log(getLength);
-         getCase();
+         criteriaCase();
+         criteriaCharacterType();
        }  
        else {
          generateBtn.addEventListener("click",writePassword);
        }  
+       return(getLength);
     }   
 
 
