@@ -40,20 +40,27 @@
     }
    }
   
+var criteriaLength = function() {
+ //ask user to input numeric value for password length
+  var getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
+    if (getLength >= 8 && getLength <= 128) {
+      console.log(getLength);  
+    }
+    else {
+      window.alert("Please select a valid response.")
+      criteriaLength();
+    }  
+    return(getLength); 
+  } 
+ 
 //will eventually be the function to combine responses into random password calculation to be inputted
 var generatePassword = function() {
-    //ask user to input numeric value for password length
-     var getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
-       if (getLength >= 8 && getLength <= 128) {
-         console.log(getLength);
-         criteriaCase();
-         criteriaCharacterType();
-       }  
-       else {
-         generateBtn.addEventListener("click",writePassword);
-       }  
-       return(getLength);
-    }   
+    criteriaLength();
+    criteriaCase();
+    criteriaCharacterType();
+  }  
+      
+ 
 
 
 // Get references to the #generate element
