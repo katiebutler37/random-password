@@ -1,6 +1,9 @@
+var getLength; 
+var hasNumbers;
+
 var criteriaLength = function() {
   //ask user to input numeric value for password length
-   var getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
+   getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
      if (getLength >= 8 && getLength <= 128) {
        console.log(getLength);  
      }
@@ -13,7 +16,7 @@ var criteriaLength = function() {
 
  //ask user to input 1,2 or 3, to decide on the cases used in the password  
   var criteriaCase = function() {
-    var getCase = window.prompt(" Would you like your password to contain UPPERCASE characters, LOWERCASE characters or BOTH? Please enter 1 for UPPERCASE, 2 for LOWERCASE, or 3 for BOTH.");
+     var getCase = window.prompt(" Would you like your password to contain UPPERCASE characters, LOWERCASE characters or BOTH? Please enter 1 for UPPERCASE, 2 for LOWERCASE, or 3 for BOTH.");
     // convert answer from prompt to an actual number
     getCase = parseInt(getCase);
     // use switch case to carry out action
@@ -60,10 +63,7 @@ var generatePassword = function() {
     criteriaCharacterType();
     return 
   }  
-      
- 
-
-
+    
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
