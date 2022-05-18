@@ -3,13 +3,15 @@ var generateBtn = document.querySelector("#generate");
 
 // Assignment code here
 
-
  generateBtn.onclick = function() {
     var promptLength = window.prompt("Please select a password length between 8 - 128 characters."); 
-      console.log(promptLength);
-      
-
-
+      if (promptLength >= 8 && promptLength <= 128) {
+        console.log(promptLength);
+        return promptLength;
+      }  
+      else {
+        generateBtn.onclick();
+      }  
   }
   
 
