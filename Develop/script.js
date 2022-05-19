@@ -1,21 +1,25 @@
-var getLength; 
+var numberChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+
+var passwordLength; 
 var hasNumbers;
 var hasSpecialCharacters;
-var hasNumbers;
 var hasUppercase;
 var hasLowercase;
 
   var criteriaLength = function() {
   //ask user to input numeric value for password length
-   getLength = window.prompt("Please select a password length between 8 - 128 characters."); 
-     if (getLength >= 8 && getLength <= 128) {
-       console.log(getLength);  
+   passwordLength = window.prompt("Please select a password length between 8 - 128 characters."); 
+     if (passwordLength >= 8 && passwordLength <= 128) {
+       console.log(passwordLength);  
      }
      else {
        window.alert("Please select a valid response.")
        criteriaLength();
      }  
-     return(getLength); 
+     return(passwordLength); 
    } 
 
  //ask user to decide if to include uppercase letters 
@@ -50,8 +54,11 @@ var hasLowercase;
 
       return(hasNumbers);
   }  
-   
 
+var makePassword = function() {
+  
+}  
+   
 //will eventually be the function to combine responses into random password calculation to be inputted
 var generatePassword = function() {
     criteriaLength();
@@ -59,6 +66,7 @@ var generatePassword = function() {
     criteriaLowercase();
     criteriaSpecialCharacters();
     criteriaNumbers();
+    makePassword();
 
     return //makePassword()
   }  
