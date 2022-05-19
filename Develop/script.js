@@ -4,23 +4,26 @@ var hasSpecialCharacters;
 var hasUppercase;
 var hasLowercase;
 
-var numberChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+const numberChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-var selectedChars;
   if (hasLowercase) {
-    selectedChars = lowerChars.concat(selectedChars);
+    const selectedChars = lowerChars.concat(selectedChars);
+    console.log(selectedChars);
   }
   if (hasUppercase) {
-    selectedChars = upperChars.concat(selectedChars);
+    const selectedChars = upperChars.concat(selectedChars);
+    console.log(selectedChars);
   }
   if (hasNumbers) {
-    selectedChars = numberChars.concat(selectedChars);
+    const selectedChars = numberChars.concat(selectedChars);
+    console.log(selectedChars);
   }
   if (hasSpecialCharacters) {
-    selectedChars = specialChars.concat(selectedChars);
+    const selectedChars = specialChars.concat(selectedChars);
+    console.log(selectedChars);
   }
 
 
@@ -71,7 +74,7 @@ var selectedChars;
   }; 
 
   var makePassword = function() {
-    for (var i = 0; i < passwordLength; i++) {
+    for (var i = 0; i < selectedChars.length; i++) {
       randomPassword = selectedChars[Math.floor(Math.random() * selectedChars.length)];
     }
   }; 
