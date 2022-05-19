@@ -9,6 +9,7 @@ const upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 const lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+var selectChars = function() {
   if (hasLowercase) {
     const selectedChars = lowerChars.concat(selectedChars);
     console.log(selectedChars);
@@ -25,7 +26,7 @@ const specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+
     const selectedChars = specialChars.concat(selectedChars);
     console.log(selectedChars);
   }
-
+}
 
   var criteriaLength = function() {
   //ask user to input numeric value for password length
