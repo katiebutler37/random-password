@@ -4,27 +4,24 @@ var hasSpecialCharacters;
 var hasUppercase;
 var hasLowercase;
 
-var numberChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 var selectedChars;
-if (hasLowercase) {
-  selectedChars = lowerChars.concat(selectedChars);
-}
-if (hasUppercase) {
-  selectedChars = upperChars.concat(selectedChars);
-}
-if (hasNumbers) {
-  selectedChars = numberChars.concat(selectedChars);
-}
-if (hasSpecialCharacters) {
-  selectedChars = specialChars.concat(selectedChars);
-}
-
-
-
+  if (hasLowercase) {
+    selectedChars = lowerChars.concat(selectedChars);
+  }
+  if (hasUppercase) {
+    selectedChars = upperChars.concat(selectedChars);
+  }
+  if (hasNumbers) {
+    selectedChars = numberChars.concat(selectedChars);
+  }
+  if (hasSpecialCharacters) {
+    selectedChars = specialChars.concat(selectedChars);
+  }
 
 
   var criteriaLength = function() {
@@ -73,9 +70,11 @@ if (hasSpecialCharacters) {
       return(hasNumbers);
   }; 
 
-var makePassword = function() {
-  
-};  
+  var makePassword = function() {
+    for (var i = 0; i < passwordLength; i++) {
+      randomPassword = selectedChars[Math.floor(Math.random() * selectedChars.length)];
+    }
+  }; 
    
 //will eventually be the function to combine responses into random password calculation to be inputted
 var generatePassword = function() {
@@ -85,6 +84,7 @@ var generatePassword = function() {
     criteriaSpecialCharacters();
     criteriaNumbers();
     makePassword();
+    
 
     return //makePassword()
   }  
