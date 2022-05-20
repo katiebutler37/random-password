@@ -14,5 +14,5 @@
 
 ### Link to Application
 
-[View in browser](https://katiebutler37.github.io/horiseon-accessibility/)
+[View in browser](https://katiebutler37.github.io/random-password/)
 
