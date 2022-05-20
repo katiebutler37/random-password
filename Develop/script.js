@@ -15,21 +15,21 @@ const specialChars = [" ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+
 //function to narrow down which arrays to choose from 
 var selectChars = function() {
   //if (variable is stored as true)
-  if (hasLowercase) {
+  if (hasLowercase === true) {
     //then add it to the larger array of all characters
     selectedChars = lowerChars.concat(selectedChars); 
     console.log(selectedChars);
   }
-  if (hasUppercase) {
+  if (hasUppercase === true) {
     selectedChars = upperChars.concat(selectedChars);
     console.log(selectedChars);
   }
-  if (hasNumbers) {
-    selectedChars = numberChars.concat(selectedChars);
+  if (hasSpecialCharacters === true) {
+    selectedChars = specialChars.concat(selectedChars);
     console.log(selectedChars);
   }
-  if (hasSpecialCharacters) {
-    selectedChars = specialChars.concat(selectedChars);
+  if (hasNumbers === true) {
+    selectedChars = numberChars.concat(selectedChars);
     console.log(selectedChars);
   }
 }
@@ -46,21 +46,19 @@ var selectChars = function() {
        window.alert("Please select a valid response.")
        criteriaLength();
      }  
-    
    } 
 
-  var criteriaUppercase = function() {
-    //ask user to decide if to include uppercase letters 
-     hasUppercase = window.confirm(" Would you like your password to contain UPPERCASE characters?");
-        console.log(hasUppercase);
-   };
-
-  
   var criteriaLowercase = function() {
     //ask user to decide if to include lowercase letters
     hasLowercase = window.confirm(" Would you like your password to contain lowercase characters?");
      console.log(hasLowercase);
 };   
+
+  var criteriaUppercase = function() {
+    //ask user to decide if to include uppercase letters 
+    hasUppercase = window.confirm(" Would you like your password to contain UPPERCASE characters?");
+        console.log(hasUppercase);
+  };
 
   var criteriaSpecialCharacters = function() {
    // ask user to decide if to include special characters  
@@ -73,6 +71,10 @@ var selectChars = function() {
     hasNumbers = window.confirm("Would you like you password to include numbers?");
       console.log(hasNumbers);
   }; 
+
+  var resetChars = function() {
+    selectedChars = [];
+  }
 
   var makePassword = function() {
     //declare randomPassword as a string so that the value does not come back undefined
@@ -87,10 +89,11 @@ var selectChars = function() {
 //will eventually be the function to combine responses into random password calculation to be inputted
 var generatePassword = function() {
     criteriaLength();
-    criteriaUppercase();
     criteriaLowercase();
+    criteriaUppercase();
     criteriaSpecialCharacters();
     criteriaNumbers();
+    resetChars ();
     selectChars ();
     return makePassword(); //return makePassword's result (randomPassword) here so that the result of our whole generatePassword function is the password we would like to have written by the writePassword function
   }  
