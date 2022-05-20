@@ -87,6 +87,7 @@ var generatePassword = function() {
     criteriaLowercase();
     criteriaSpecialCharacters();
     criteriaNumbers();
+    selectChars ();
     makePassword();
     
 
